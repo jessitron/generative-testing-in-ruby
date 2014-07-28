@@ -9,4 +9,12 @@ describe Rules do
       expect(subject.score(:cooperate, :cooperate)).to eq([3, 3])
     end
   end
+
+  generative do
+    data(:rules) { Rules.new(5,3,2,1) }
+
+    it ("does something") do
+      expect(rules.score(:cooperate, :cooperate)).to eq([3,3])
+    end
+  end
 end
