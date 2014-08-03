@@ -1,4 +1,5 @@
 require_relative '../lib/rules'
+require 'rantly'
 require 'rantly/rspec_extensions'
 
 describe Rules do
@@ -11,6 +12,7 @@ describe Rules do
     end
   end
 
+  it "tests with properties" do
   property_of {
    Rules.new(5,3,2,1)
   }.check { |rules|
@@ -19,4 +21,5 @@ describe Rules do
       cooperation_score = rules.score(:cooperate, opponent_move).first
       expect(defection_score).to be > cooperation_score
   }
+  end
 end
