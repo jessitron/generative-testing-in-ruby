@@ -1,3 +1,4 @@
 source "http://rubygems.org"
 
-gem "generative", path: '../generative/'
+gem "rspec"
+gem "rantly", path: "../rantly"

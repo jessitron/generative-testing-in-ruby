@@ -1,8 +1,7 @@
 PATH
-  remote: ../generative/
+  remote: ../rantly
   specs:
-    generative (0.2.0.pre2)
-      rspec
+    rantly (0.3.0)
 
 GEM
   remote: http://rubygems.org/
@@ -25,4 +24,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  generative!
+  rantly!
+  rspec
