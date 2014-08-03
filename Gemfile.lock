@@ -1,9 +1,13 @@
+PATH
+  remote: ../generative/
+  specs:
+    generative (0.2.0.pre2)
+      rspec
+
 GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.2.5)
-    generative (0.1.0)
-      rspec
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -21,4 +25,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  generative
+  generative!
