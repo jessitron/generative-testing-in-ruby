@@ -10,17 +10,17 @@ describe Rules do
     end
   end
 
-  it 'shrinks' do
-    property_of {
-      integer
-    }.check do |i|
-      expect(i).to be > 0
-    end
-  end
+#  it 'shrinks' do
+#    property_of {
+#      integer
+#    }.check do |i|
+#      expect(i).to be > 0
+#    end
+#  end
 
   it 'tests with properties' do
     property_of {
-      Rules.new(5,3,2,1)
+      PrisonersDilemma::Generators.rules()
     }.check do |rules|
       opponent_move = :defect
       defection_score = rules.score(:defect, opponent_move).first
