@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 require_relative '../lib/rules'
 
-describe Rules do
+describe PrisonersDilemma::Rules do
   context 'example-based tests' do
     subject { described_class.new(5, 3, 2, 1) }
 
