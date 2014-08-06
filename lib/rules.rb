@@ -9,7 +9,16 @@ module PrisonersDilemma
     end
 
     def score(move1, move2)
-      [@c,@c]
+      case [move1, move2]
+      when [:cooperate, :cooperate]
+        [@c, @c]
+      when [:cooperate, :defect]
+        [@s, @t]
+      when [:defect, :cooperate]
+        [@t, @s]
+      when [:defect, :defect]
+        [@p, @p]
+      end
     end
 
     def to_s
