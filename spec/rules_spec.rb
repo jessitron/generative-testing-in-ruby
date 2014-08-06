@@ -20,13 +20,21 @@ describe PrisonersDilemma::Rules do
 #  end
 
 
-  it 'tests with properties' do
+  it 'Defection is always better for me' do
     property_of {
-     PrisonersDilemma::Shrinkers.shrink_like_i_say([PrisonersDilemma::Generators.rules, PrisonersDilemma::Generators.move])
+     Generators.of_two(Generators.rules, Generators.move).sample
     }.check do |( rules, opponent_move )|
       defection_score = rules.score(:defect, opponent_move).first
       cooperation_score = rules.score(:cooperate, opponent_move).first
       expect(defection_score).to be > cooperation_score
+    end
+  end
+
+  it 'Mutual Cooperation is the best possible outcome' do
+    property_of {
+      Generators.of_two(Generators.move, Generators.move).filter(->(v) {v != [:cooperate, :cooperate]}).sample
+    }.check do |(move1,move2)|
+      false
     end
   end
 end
